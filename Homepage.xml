@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Homepage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Contact.xsd">
+	<navbar xmlns:xlink="http://www.w3.org/1999/xlink">
+		<Header>CanDar Sports tech</Header>
+		<Home xlink:type="simple" xlink:href="homepage.php">Click to return to home page!</Home>
+		<Product xlink:type="simple" xlink:href="productpage.php">Click to view our products!</Product>
+		<About xlink:type="simple" xlink:href="About.html">Click to view information about us!</About>
+		<Contact xlink:type="simple" xlink:href="contact.php">Click to get in contact with us!</Contact>
+		<Service xlink:type="simple" xlink:href="deliverypage.php">Click to view our services!</Service>
+    </navbar>
+
+    <body>
+    	<paragraph1>Welcome to CanDar Sports Tech King</paragraph1>
+    	<paragraph2>Choose Quality</paragraph2>
+    </body>
+    <body xmlns:xlink="http://www.w3.org/1999/xlink">
+    	<logout xlink:type="simple" xlink:href="logout.php"></logout>
+    	<order xlink:type="simple" xlink:href="productpage.php">Order Now</order>
+    </body>
+
+    <footer-icon xmlns:xlink="http://www.w3.org/1999/xlink">
+    	<Facebook xlink:type="simple" xlink:href="www.facebook.com">Click on the Facebook icon to view our page!
+		</Facebook>	
+
+		<Twitter xlink:type="simple" xlink:href="www.twitter.com">
+		Click on the Twitter icon to view our page!
+		</Twitter>
+
+		<Instagram xlink:type="simple" xlink:href="www.instagram.com">Click on the Instagram icon to view our page!	
+		</Instagram>
+	</footer-icon>
+
+	<footer-link xmlns:xlink="http://www.w3.org/1999/xlink">
+		<Home xlink:type="simple" xlink:href="homepage.php">Home</Home>
+		<About xlink:type="simple" xlink:href="About.html">About</About>
+		<Contact xlink:type="simple" xlink:href="contact.php">Contact</Contact>
+		<Service xlink:type="simple" xlink:href="deliverypage.php">Services</Service>
+	</footer-link>
+  
+	<footer>
+        <copyright>copyright &#169;Sports Pro. All Rights Reserved</copyright>
+          <!-- &#169 is the representation of the copyright symbol -->
+	</footer>	
+</Homepage>

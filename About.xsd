@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="schema1-about.xsd" namespace="http://www.w3.org/1999/xlink" />
+  <xs:import schemaLocation="schema2-about.xsd" namespace="http://www.w3.org/1999/xhtml" />
+  <xs:element name="About">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Aboutus">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:element minOccurs="0" xmlns:q1="http://www.w3.org/1999/xhtml" ref="q1:html" />
+              <xs:element minOccurs="0" name="Contactus">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute ref="xlink:type" use="required" />
+                      <xs:attribute ref="xlink:href" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Facebook">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute ref="xlink:type" use="required" />
+                      <xs:attribute ref="xlink:href" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Twitter">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute ref="xlink:type" use="required" />
+                      <xs:attribute ref="xlink:href" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Instagram">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute ref="xlink:type" use="required" />
+                      <xs:attribute ref="xlink:href" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Description1" type="xs:string" />
+              <xs:element minOccurs="0" name="Description2" type="xs:string" />
+              <xs:element minOccurs="0" name="Description3" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

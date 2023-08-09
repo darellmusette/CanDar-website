@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Registrations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="register.xsd">
+  <registration>
+    <fullname>king</fullname>
+    <Email>Darell@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname>toma</fullname>
+    <Email>toma@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname>Rodney</fullname>
+    <Email>Rodney@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname>james</fullname>
+    <Email>james@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname>sky</fullname>
+    <Email>sky@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname>shane</fullname>
+    <Email>shane@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+<registration><fullname>test</fullname><Email>test@gmail.com</Email><password>1234</password></registration><registration><fullname>test</fullname><Email>test@gmail.com</Email><password>12345</password></registration></Registrations>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="productpage.xsl"?>
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="productpage.xsd">
+
+
+    <product id="0003">
+        <name>Under Calm</name>
+        <price>Rs 3200.00</price>
+        <image src="basketball shoe2.jpg" />
+    </product>
+
+
+    <product id="0004">
+        <name>Swift Sky</name>
+        <price>Rs 2400.00</price>
+        <image src="basketball shoe1.jpg" />
+    </product>
+
+    <product id="0008">
+        <name>Duncanet Jersey</name>
+        <price>Rs 2000.00</price>
+        <image src="basket top1.jpg" />
+    </product>
+
+    <product id="0009">
+        <name>Lakers Jersey</name>
+        <price>Rs 1200.00</price>
+        <image src="basket top2.jpg" />
+    </product>
+
+    <product id="0010">
+        <name>Spatial Ball</name>
+        <price>Rs 3000.00</price>
+        <image src="basket ball 1.jpg" />
+    </product>
+
+    <product id="0011">
+        <name>Vital Hoop</name>
+        <price>Rs 5000.00</price>
+        <image src="basket hoop.jpg" />
+    </product>
+
+    <product id="0015">
+        <name>Venum White</name>
+        <price>Rs 3200.00</price>
+        <image src="shirt1.jpg" />
+    </product>
+
+    <product id="0016">
+        <name>sky shoes</name>
+        <price>Rs 1300.00</price>
+        <image src="boxingshoe3.jpg" />
+    </product>
+
+    <product id="0017">
+        <name>venom shoe</name>
+        <price>Rs 1200.00</price>
+        <image src="boxingshoe2.jpg" />
+    </product>
+
+    <product id="0018">
+        <name>black venum</name>
+        <price>Rs 1000.00</price>
+        <image src="box3.jpg" />
+    </product>
+
+    <product id="0027">
+        <name>King Short</name>
+        <price>Rs 800.00</price>
+        <image src="short2.jpg" />
+    </product>
+
+    <product id="0020">
+        <name>adama short</name>
+        <price>Rs 600.00</price>
+        <image src="boxingshort3.jpg" />
+    </product>
+
+    <product id="0021">
+        <name>lakers short</name>
+        <price>Rs 1200.00</price>
+        <image src="boxingshort4.jpg" />
+    </product>
+
+    <product id="0022">
+        <name>snow shoes</name>
+        <price>Rs 2000.00</price>
+        <image src="boxingshoe1.jpg" />
+    </product>
+
+    <product id="0023">
+        <name>simple grey short</name>
+        <price>Rs 3000.00</price>
+        <image src="bshort2.jpeg" />
+    </product>
+
+    <product id="0024">
+        <name>vital short</name>
+        <price>Rs 5000.00</price>
+        <image src="boxingshort1.jpg" />
+    </product>
+
+    <product id="0025">
+        <name>white venum</name>
+        <price>Rs 3200.00</price>
+        <image src="box1.jpg" />
+    </product>
+
+    <product id="0026">
+        <name>swiss</name>
+        <price>Rs 3000.00</price>
+        <image src="box4.jpg" />
+    </product>
+
+    <product id="0028">
+        <name>ice boot</name>
+        <price>Rs 2000.00</price>
+        <image src="boot1.jpg" />
+    </product>
+
+    <product id="0029">
+        <name>adiddas boots</name>
+        <price>Rs 3000.00</price>
+        <image src="boot2.jpg" />
+    </product>
+
+    <product id="0030">
+        <name>dermodic boots</name>
+        <price>Rs 4000.00</price>
+        <image src="boot3.jpg" />
+    </product>
+
+    <product id="0031">
+        <name>james shirt</name>
+        <price>Rs 500.00</price>
+        <image src="shirt2.jpg" />
+    </product>
+
+    <product id="0032">
+        <name>source ball</name>
+        <price>Rs 1400.00</price>
+        <image src="ball1.jpg" />
+    </product>
+
+    <product id="0033">
+        <name>rolex socks</name>
+        <price>Rs 800.00</price>
+        <image src="sock2.jpg" />
+    </product>
+
+    <product id="0034">
+        <name>jin socks</name>
+        <price>Rs 600.00</price>
+        <image src="sock1.jpg" />
+    </product>
+
+    <product id="0035">
+        <name>king socks</name>
+        <price>Rs 900.00</price>
+        <image src="sock4.jpg" />
+    </product>
+
+</Products> 

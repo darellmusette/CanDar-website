@@ -1,0 +1,345 @@
+/*CSS start for product page*/
+.product-list{
+	background-color: #dfe6e9;
+	padding: 3em;
+}
+
+.product-list .card{
+	background-color: azure;
+	border-radius: 10px;
+	padding: 1em;
+	box-shadow: 0px 10px 5px #b2bec3;
+	text-align: center;
+	font-family: 'poppins';
+	
+}
+
+.title{
+	font-size: 20px;
+	font-family: sans-serif;
+	color:#3d3d3d ;
+
+}
+
+
+
+.card img{
+	max-width: 50%;
+	border-radius: 5px;
+	
+}
+
+.card .text{
+	text-align: center;
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	font-size: 12px;
+	color: cyan;
+
+}
+
+.buy-button{
+	background-color: #f9ca24;
+	border: none;
+	padding: 1em;
+	border-radius: 5px; 
+	font-weight: bold;
+	width: 100%;
+	margin-bottom: 10px;
+	cursor: pointer;
+
+}
+
+.buy-button:hover{
+	box-shadow: 0px 5px 5px #b2bec3;
+	color: #30336b;
+}
+
+.product-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;  /*how many to display on a row*/
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	}
+
+
+.align-center{						 /* css animated page title*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #252839;#252839;
+	font-size: 3vw;
+	animation: textanimation 1s ease-in-out;
+	
+}
+
+@keyframes textanimation{
+	0%{
+		letter-spacing: 20px;
+	}
+
+	100%{
+		letter-spacing: 1px;
+	}
+}
+								/*css end animated page title*/
+
+
+	
+/*End of CSS for product*/
+
+
+
+/*Start of css for the Navbar*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box ;
+	font-family: 'poppins', sans-serif;
+}
+
+a{margin-right: 5px;}
+body{
+	background: #f2f2f2;
+	margin: 0;
+	padding: 0;
+}
+	
+nav{
+	background: #1b1b1b;
+	
+
+}	
+
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+
+}
+
+nav .logo{
+	float: left;
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 50px;
+	
+
+
+}
+
+nav ul{
+	float: right;
+	list-style: none;
+	margin-right: 40PX;
+	position: relative;
+}
+
+nav ul li{
+	float: left;
+	display: inline-block;
+	background:#1b1b1b ;
+	margin-right: 0 5px;
+}
+
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	line-height: 70px;
+	font-size:18px;
+	padding: 8px 15px;
+}
+
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #33ffff,
+				0 0 5px #66ffff;
+}
+
+nav ul ul li a:hover{
+	color: cyan;
+	box-shadow: none ;
+}
+
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	
+
+}
+
+nav ul ul ul{
+	border-top: none;
+}
+
+nav ul li:hover> ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+nav ul ul li{
+	position: relative;
+	margin: 0px;
+	width: 100px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+nav ul ul li a{
+	line-height: 50px;
+}
+
+nav ul ul ul li{
+	position: relative;
+	top: -70;
+	left: 150px;
+}
+
+/*end of navbar*/
+
+
+/*css for search button*/
+
+.search-box{
+	position:absolute; 
+	background: #2f3640;
+	height: 40px;
+	border-radius: 30px;
+	padding: 10px;
+	margin-top: 4px; /*add space between the navbar and search-box*/
+
+}
+
+.search-btn{
+	color: #e84118; /*searched color on Hexa color*/
+	float: right;
+	width: 40px;
+	border-radius: 70%;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	
+}
+
+.search-txt{
+	border: none;
+	background: none;  
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 30px ;
+	width: 0px;
+}
+
+.search-box:hover > .search-txt{
+	width: 240px;
+	padding: 0 6px;
+}
+
+
+
+/*zoom in effect*/
+
+.image img{
+	transform: scale(1);
+	transition: 0.3s ease-in-out;
+}
+
+.image:hover img{
+	transform: scale(1.5);
+}
+/*end of effect*/
+
+/*CSS for footer*/
+.footer{
+	margin-top: 150px;
+}
+.inner-footer{
+	margin: 0;
+	padding: 0;
+	background-color: #272727;
+}
+
+.social-links{
+	display: flex;
+}
+
+.social-links ul{
+	padding: 10px;
+	display: flex;
+	width: 300px;
+	height: 30px;
+	margin: auto;
+}
+
+.social-items{
+	list-style: none;
+}
+
+.social-items a{
+	padding: 15px 20px;
+	font-size: 35px;
+	color: #6cccc6;
+	transition: all .25s;
+}
+
+.social-items a:hover{
+	color: white;
+}
+
+.quick-links{
+	display: flex;
+	width: 560px;
+	height: 70px;
+	margin: auto;
+}
+
+.quick-links ul{
+	display: flex;
+	padding: 33px;
+	margin-left: 68px;
+}
+
+.quick-items{
+	list-style: none;
+}
+
+.quick-items a{
+	text-decoration: none;
+	padding: 0px 10px;
+	font-size: 20px;
+	color: white;
+	transition: all .25s;
+}
+
+.outer-footer{
+	padding: 10px;
+	text-align: center;
+	color: white;
+	font-size: 18px;
+	background-color: #3f3f3f;
+}
+
+.quick-items a:hover{
+	color: #6cccc6;
+}
+
+
+
+
+
+
+
+
+

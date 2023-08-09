@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<About xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="About.xsd">
+	<Aboutus>
+		<Description1>
+			About us
+		</Description1>
+		<Description2>
+			Determination,power.
+		</Description2>
+		<Description3>
+          We are two youngters actually studying at the University. We have decided to start-up our E-shopping system to provide others high quality services and products. Our objective is to ensure that our customers are satisfied with our products and services.
+		</Description3>
+	</Aboutus>
+
+	<Aboutus xmlns:xlink="http://www.w3.org/1999/xlink">
+
+		<Contactus xlink:type="simple" xlink:href="contact.xml">Click to get in contact with us!
+		</Contactus>
+
+		<Facebook xlink:type="simple" xlink:href="www.facebook.com">Click to discover our Facebook page!
+		</Facebook>
+
+		<Twitter xlink:type="simple" xlink:href="www.twitter.com">Click to discover our Twitter page!
+		</Twitter>
+
+		<Instagram xlink:type="simple" xlink:href="www.instagram.com">Click to discover our Instagram page!	
+		</Instagram>
+	</Aboutus>
+
+	<Aboutus>
+		<html xmlns="http://www.w3.org/1999/xhtml">
+			<img src="basketimage4.jpg"/>
+		</html>
+	</Aboutus>
+</About>		

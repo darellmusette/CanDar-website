@@ -1,0 +1,62 @@
+
+.contact-info{
+	display:flex;
+	width: 100%;
+	max-width: 1200px;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+	margin-top: 200px;
+	margin-left: 150px;
+}
+
+.box{
+	background: black;
+	padding:0 20px;
+	margin: 0 10px;
+	width: calc(33% - 20px);
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: blueviolet;
+	cursor: pointer;
+}
+
+.box-icon{
+	font-size: 28px;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px !important;
+	border-radius: 40%;
+	transition: 0.3s linear ;
+	}
+
+.box:hover .box-icon{
+	transform: scale(1.6);
+}	
+
+.box p{
+	margin-top: 20px ;
+	font-weight: 300;
+	letter-spacing: 2px;
+	max-height: 0;
+	opacity: 0;
+	transition: 0.3s linear;
+}
+
+.box:hover p{
+	
+	opacity: 1;
+	max-height: 40px;
+}
+
+@media screen and (max-width: 800px){
+	.contact-info{
+		flex-direction: column;
+	}
+
+
+
