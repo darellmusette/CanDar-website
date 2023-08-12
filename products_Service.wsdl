@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ProductService"
+    targetNamespace="http://localhost/soap_products_service"
+	xmlns:tns="http://localhost/soap_products_service"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<types>
+		<xsd:schema targetNamespace="http://localhost/soap_products_service">
+			<xsd:complexType name="Product">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"/>
+					<xsd:element name="name" type="xsd:string"/>
+					<xsd:element name="price" type="xsd:float"/>
+					<xsd:element name="image" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfProduct">
+				<xsd:complexContent>
+					<xsd:restriction base="soapenc:Array">
+						<xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Product[]"/>
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+	</types>
+	<message name="fetchProductsRequest"/>
+	<message name="fetchProductsResponse">
+		<part name="return" type="tns:ArrayOfProduct"/>
+	</message>
+	<portType name="ProductServicePortType">
+		<operation name="fetchProducts">
+			<input message="tns:fetchProductsRequest"/>
+			<output message="tns:fetchProductsResponse"/>
+		</operation>
+	</portType>
+	<binding name="ProductServiceBinding" type="tns:ProductServicePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="fetchProducts">
+			<soap:operation soapAction="http://localhost/soap_products_service#fetchProducts"/>
+			<input>
+				<soap:body use="encoded" namespace="http://localhost/soap_products_service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="http://localhost/soap_products_service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ProductService">
+		<port name="ProductServicePort" binding="tns:ProductServiceBinding">
+			<soap:address location="http://localhost/soap_products_service.php"/>
+		</port>
+	</service>
+</definitions>

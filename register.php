@@ -25,34 +25,34 @@ if (isset($_POST["Login"])) {
     $fname = $_POST["fullname"];
     $Email = $_POST["Email"];
     $password = $_POST["password"];
+    $confirmpassword = $_POST["confirmpassword"]; // Add this line
 
     // Check password length
     if (strlen($password) < 5 || strlen($password) > 8) {
         echo '<script>alert("Invalid password length")</script>';
-        ;
+    } elseif ($password !== $confirmpassword) {
+        echo '<script>alert("Passwords do not match")</script>';
+    } else {
+        $rootTag = $xml->getElementsByTagName("Registrations")->item(0);
 
+        $registration = $xml->createElement("registration");
+
+        $nameTag = $xml->createElement("fullname");
+        $nameTag->appendChild($xml->createTextNode($fname));
+        $EmailTag = $xml->createElement("Email");
+        $EmailTag->appendChild($xml->createTextNode($Email));
+        $pwdTag = $xml->createElement("password");
+        $pwdTag->appendChild($xml->createTextNode($password));
+
+        $registration->appendChild($nameTag);
+        $registration->appendChild($EmailTag);
+        $registration->appendChild($pwdTag);
+
+        $rootTag->appendChild($registration);
+        $xml->save('register.xml');
+
+        echo '<script>alert("data inserted")</script>';
     }
-
-    $rootTag = $xml->getElementsByTagName("Registrations")->item(0);
-
-    $registration = $xml->createElement("registration");
-
-    $nameTag = $xml->createElement("fullname");
-    $nameTag->appendChild($xml->createTextNode($fname));
-    $EmailTag = $xml->createElement("Email");
-    $EmailTag->appendChild($xml->createTextNode($Email));
-    $pwdTag = $xml->createElement("password");
-    $pwdTag->appendChild($xml->createTextNode($password));
-
-    $registration->appendChild($nameTag);
-    $registration->appendChild($EmailTag);
-    $registration->appendChild($pwdTag);
-
-    $rootTag->appendChild($registration);
-    $xml->save('register.xml');
-
-    echo '<script>alert("data inserted")</script>';
-    ;
 }
 ?>
 

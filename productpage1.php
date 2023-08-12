@@ -1,10 +1,10 @@
-<?php
-session_start();
-if (!isset($_SESSION['fullname'])) { //CHECK IF SESSION IS SET
-    header('Location:login.php');
-}
+//*
+<?
+//*session_start();
+//*if (!isset($_SESSION['fullname'])) { //CHECK IF SESSION IS SET
+//*    header('Location:login.php');
+//*}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +47,10 @@ if (!isset($_SESSION['fullname'])) { //CHECK IF SESSION IS SET
 
                 <li>
                     <a href="productpage1.php">Products</a>
+                </li>
+
+                <li>
+                    <a href="currencyConverter.php">Currency Converter</a>
                 </li>
 
                 <li>
@@ -102,28 +106,31 @@ if (!isset($_SESSION['fullname'])) { //CHECK IF SESSION IS SET
         <div>
             <h1 class="align-center"> OUR PRODUCTS</h1>
         </div>
+
         <?php
+        require_once("nusoap.php");
 
-        $xml = new DOMDocument();
-        $xml->load('productpage.xml');
+        $namespace = "http://localhost/products_soap_service";
+        $client = new nusoap_client("C:\Program Files (x86)\EasyPHP-Devserver-17\eds-www\CanDar Sports Tech\products_Service.wsdl", true);
 
-        //  here you can apply the schema to validate
-        $is_valid_xml = $xml->schemaValidate('productpage.xsd'); // path to xsd file
-        
-        if (!$is_valid_xml) {
-            echo '<b>Invalid XML:</b> validation failed<br>';
+        $response = $client->call('fetchProducts');
+
+        if ($client->fault) {
+            echo "SOAP Fault: " . $client->fault;
         } else {
-            echo '';
+            $error = $client->getError();
+            if ($error) {
+                echo "Error: " . $error;
+            } else {
+                foreach ($response as $product) {
+                    echo '<div class="product">';
+                    echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+                    echo '<h2>' . $product['name'] . '</h2>';
+                    echo '<p>Price: $' . $product['price'] . '</p>';
+                    echo '</div>';
+                }
+            }
         }
-
-        $xsl = new DOMDocument;
-        $xsl->load('productpage .xsl');
-
-        $proc = new XSLTProcessor();
-        $proc->importStyleSheet($xsl);
-
-        echo $proc->transformToXML($xml);
-
         ?>
     </div>
 

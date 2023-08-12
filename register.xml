@@ -30,4 +30,19 @@
     <Email>shane@gmail.com</Email>
     <password>12345</password>
   </registration>
-<registration><fullname>test</fullname><Email>test@gmail.com</Email><password>1234</password></registration><registration><fullname>test</fullname><Email>test@gmail.com</Email><password>12345</password></registration></Registrations>
+  <registration>
+    <fullname>test</fullname>
+    <Email>test@gmail.com</Email>
+    <password>1234</password>
+  </registration>
+  <registration>
+    <fullname>test</fullname>
+    <Email>test@gmail.com</Email>
+    <password>12345</password>
+  </registration>
+  <registration>
+    <fullname></fullname>
+    <Email></Email>
+    <password></password>
+  </registration>
+</Registrations>
