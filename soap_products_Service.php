@@ -1,72 +1,56 @@
 <?php
-$servername = 'localhost'; // DATABASE CONNECTION
-$username = 'root';
-$password = '';
-$db = 'candar sports tech'; // Adjust the database name
+//require_once('dbconn.php');
+//require_once('nusoap.php');
 
-$conn = mysqli_connect($servername, $username, $password, $db);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$server=new nusoap_server();
+//global $dbconn;
+
+function fetchProducts(){
+    include 'dbconn.php';
+    
+    if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+      }
+      
+      $sql = "SELECT ProductName,ProductPrice,productImage FROM product";
+      $result = $dbconn->query($sql);
+      
+      if ($result->num_rows > 0) {
+        // Output data of each row
+        while($row = $result->fetch_assoc()) {
+          echo "Name: " . $row["ProductName"]. " - Price: " . $row["ProductPrice"]. " - Image: " . $row["productImage"]. "<br>";
+        }
+      } else {
+        echo "0 results";
+      }
+      $dbconn->close();
+      
+
+
+
+//change
+    //$stmt=$dbconn->prepare($sql);
+    //$stmt->bindParam(':isbn',$result);
+
+    //$stmt->execute();
+    //$data=$stmt->fetch(PDO::FETCH_ASSOC);
+    //return json_encode($data);
+
+    //$dbconn=null;
+//End change
+
 }
+//fetchProducts();
+//$server->configureWSDL('productServer','urn:product');
+//$server->register('fetchProducts',
+//array('name'=>'xsd:string'),
+//array('price'=>'xsd:string'),
+//array('image'=>'xsd:string'),
+//'urn:book#fetchProducts'
 
-require_once("nusoap.php");
+//);
 
-// Create a new SOAP server
-$server = new soap_server();
-$namespace = "http://localhost/products_soap_service";
-$server->configureWSDL("ProductService", $namespace);
-$server->wsdl->schemaTargetNamespace = $namespace;
-
-// Complex type definition for Product
-$server->wsdl->addComplexType(
-    "Product",
-    "complexType",
-    "struct",
-    "all",
-    "",
-    array(
-        "id" => array("name" => "id", "type" => "xsd:int"),
-        "name" => array("name" => "name", "type" => "xsd:string"),
-        "price" => array("name" => "price", "type" => "xsd:float"),
-        "image" => array("name" => "image", "type" => "xsd:string")
-    )
-);
-
-// Register fetchProducts function
-$server->register(
-    "fetchProducts",
-    array(),
-    array("return" => "tns:Product[]"),
-    $namespace,
-    $namespace . "#fetchProducts",
-    "rpc",
-    "encoded",
-    "Fetches a list of products with images"
-);
-
-// Fetch products function
-function fetchProducts()
-{
-    global $conn; // Use the global $conn variable
-
-    $query = "SELECT ProductID, ProductName, ProductPrice, productImage FROM product"; // QUERY
-    $result = $conn->query($query);
-
-    $products = array();
-    while ($row = $result->fetch_assoc()) {
-        $products[] = $row;
-    }
-
-    return $products;
-}
-
-// Process SOAP request
-$HTTP_RAW_POST_DATA = isset($HTTP_RAW_POST_DATA) ? $HTTP_RAW_POST_DATA : '';
-$server->service($HTTP_RAW_POST_DATA);
+//$server->service(file_get_contents("php://input"));
 ?>
-
-
-
-
 
 

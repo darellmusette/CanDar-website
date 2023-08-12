@@ -108,20 +108,15 @@
         </div>
 
         <?php
-        require_once("nusoap.php");
+        include './productservice_client.php';
+        ?>
 
-        $namespace = "http://localhost/products_soap_service";
-        $client = new nusoap_client("C:\Program Files (x86)\EasyPHP-Devserver-17\eds-www\CanDar Sports Tech\products_Service.wsdl", true);
+        <?php
+        if (count($result)){
 
-        $response = $client->call('fetchProducts');
-
-        if ($client->fault) {
-            echo "SOAP Fault: " . $client->fault;
-        } else {
-            $error = $client->getError();
-            if ($error) {
-                echo "Error: " . $error;
-            } else {
+        
+        
+       
                 foreach ($response as $product) {
                     echo '<div class="product">';
                     echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
@@ -130,7 +125,7 @@
                     echo '</div>';
                 }
             }
-        }
+            
         ?>
     </div>
 
