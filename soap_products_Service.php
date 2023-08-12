@@ -1,9 +1,7 @@
 <?php
-//require_once('dbconn.php');
-//require_once('nusoap.php');
+require_once('nusoap.php');
 
 $server=new nusoap_server();
-//global $dbconn;
 
 function fetchProducts(){
     include 'dbconn.php';
@@ -17,40 +15,27 @@ function fetchProducts(){
       
       if ($result->num_rows > 0) {
         // Output data of each row
-        while($row = $result->fetch_assoc()) {
-          echo "Name: " . $row["ProductName"]. " - Price: " . $row["ProductPrice"]. " - Image: " . $row["productImage"]. "<br>";
-        }
+        // while($row = $result->fetch_assoc()) {
+        //   echo "Name: " . $row["ProductName"]. " - Price: " . $row["ProductPrice"]. " - Image: " . $row["productImage"]. "<br>";
+        // }
+        return json_encode($result);
       } else {
         echo "0 results";
       }
       $dbconn->close();
-      
-
-
-
-//change
-    //$stmt=$dbconn->prepare($sql);
-    //$stmt->bindParam(':isbn',$result);
-
-    //$stmt->execute();
-    //$data=$stmt->fetch(PDO::FETCH_ASSOC);
-    //return json_encode($data);
-
-    //$dbconn=null;
-//End change
 
 }
+
 //fetchProducts();
-//$server->configureWSDL('productServer','urn:product');
-//$server->register('fetchProducts',
-//array('name'=>'xsd:string'),
-//array('price'=>'xsd:string'),
-//array('image'=>'xsd:string'),
-//'urn:book#fetchProducts'
 
-//);
-
-//$server->service(file_get_contents("php://input"));
+$server->configureWSDL('fetchProducts', 'urn:products');
+$server->register('fetchProducts',
+array(), //parameter
+array('data' => 'xsd:string'), //output
+'urn:products', //namespace
+'urn:products#fetchProducts' //soapaction
+);
+$server->service(file_get_contents("php://input"));
 ?>
 
 
